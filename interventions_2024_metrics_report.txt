@@ -1,0 +1,83 @@
+
+================================================================================
+        RAPPORT D'ANALYSE DES METRIQUES DE MAINTENANCE
+================================================================================
+
+Date de generation : 2026-01-05 11:09:09
+Fichier source     : interventions_2024_cleaned.csv
+Fichier metriques  : interventions_2024_metrics.csv
+
+--------------------------------------------------------------------------------
+STATISTIQUES GLOBALES
+--------------------------------------------------------------------------------
+
+Nombre total de machines      : 50
+Nombre total d'interventions  : 5000
+Temps d'arret cumule total    : 118641.45 heures (4943.39 jours)
+
+MTTR moyen (toutes machines)  : 23.71 heures
+MTBF moyen (toutes machines)  : 3.68 jours
+Taux de disponibilite moyen   : 72.91 %
+
+--------------------------------------------------------------------------------
+TOP 10 DES MACHINES LES PLUS CRITIQUES
+--------------------------------------------------------------------------------
+(Triees par temps d'arret cumule decroissant)
+
+#    Machine      Nb Int.    MTTR (h)     Arret (h)      MTBF (j)     Dispo %   
+--------------------------------------------------------------------------------
+1    CNC-009      126        24.55        3093.55        2.90         64.69     
+2    CMP-004      113        27.04        3055.00        3.23         65.13     
+3    PMP-008      113        26.37        2979.50        3.23         65.99     
+4    CVY-001      113        25.48        2878.85        3.23         67.14     
+5    CNC-003      108        26.41        2852.70        3.38         67.43     
+6    MOT-010      107        24.86        2660.25        3.41         69.63     
+7    MOT-007      121        21.51        2602.65        3.02         70.29     
+8    CMP-002      102        25.30        2580.95        3.58         70.54     
+9    MOT-004      104        24.81        2580.65        3.51         70.54     
+10   PMP-010      92         27.55        2534.75        3.97         71.06     
+
+--------------------------------------------------------------------------------
+INTERPRETATION DES INDICATEURS
+--------------------------------------------------------------------------------
+
+MTTR (Mean Time To Repair)
+  > Duree moyenne d'une intervention de reparation
+  > Plus le MTTR est faible, meilleure est la reparabilite
+  > Objectif : Minimiser le MTTR
+
+MTBF (Mean Time Between Failures)
+  > Temps moyen entre deux pannes consecutives
+  > Plus le MTBF est eleve, meilleure est la fiabilite
+  > Objectif : Maximiser le MTBF
+  > Formule : 365 jours / nombre d'interventions
+
+Taux de Disponibilite
+  > Pourcentage de temps ou la machine est operationnelle
+  > Objectif : Maximiser (proche de 100%)
+  > Formule : ((8760h - temps arret) / 8760h) * 100
+
+--------------------------------------------------------------------------------
+RECOMMANDATIONS POUR LES MACHINES CRITIQUES
+--------------------------------------------------------------------------------
+
+Les machines du Top 10 necessitent une attention particuliere :
+
+1. Machines avec MTTR eleve (> 23.7h)
+   > Ameliorer la logistique des pieces de rechange
+   > Former les techniciens sur ces equipements
+   > Envisager la maintenance predictive
+
+2. Machines avec MTBF faible (< 3.7 jours)
+   > Renforcer la maintenance preventive
+   > Analyser les causes racines des pannes recurrentes
+   > Envisager le remplacement si obsolescence
+
+3. Machines avec faible disponibilite (< 72.9%)
+   > Priorite absolue pour optimisation
+   > Audit technique complet recommande
+   > Plan d'action correctif urgent
+
+================================================================================
+                    FIN DU RAPPORT
+================================================================================

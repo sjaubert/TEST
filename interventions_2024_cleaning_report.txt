@@ -1,0 +1,50 @@
+
+=================================================================
+        RAPPORT DE NETTOYAGE - interventions_2024.csv
+=================================================================
+
+Date du nettoyage : 2026-01-05 11:02:08
+Fichier source     : interventions_2024.csv
+Fichier nettoye    : interventions_2024_cleaned.csv
+
+-----------------------------------------------------------------
+STATISTIQUES
+-----------------------------------------------------------------
+
+Total d'enregistrements : 5000
+Total de modifications  : 4842
+
+DETAILS DES MODIFICATIONS :
+
+  Dates normalisees          : 183 
+  Durees corrigees           : 2706
+  Techniciens standardises   : 715
+  Types de pannes normalises : 547
+  Pieces normalisees         : 691
+
+-----------------------------------------------------------------
+RESUME DES NORMALISATIONS APPLIQUEES
+-----------------------------------------------------------------
+
+* Format de date : ISO 8601 (YYYY-MM-DD)
+* Format de duree : Decimal (heures avec 2 decimales)
+* Noms de techniciens : Format "Prenom Nom" standardise
+* Types de pannes : Title Case avec accents corrects
+* Pieces changees : Virgule comme separateur unique
+* Valeurs nulles : "Aucune" pour les pieces non changees
+
+-----------------------------------------------------------------
+AMELIORATIONS DE LA QUALITE DES DONNEES
+-----------------------------------------------------------------
+
+> Correction des dates multi-formats (DD-MM-YYYY, DD/MM/YYYY, DD.MM.YYYY)
+> Conversion des durees textuelles ("13 heures 30 min", "41h45")
+> Correction des durees invalides (double point decimal)
+> Unification des noms de techniciens (abreviations eliminees)
+> Standardisation de la casse des types de pannes
+> Harmonisation des separateurs de pieces (;, /, -, | -> ,)
+> Normalisation des valeurs vides (N/A, -, vide -> Aucune)
+
+=================================================================
+                    NETTOYAGE TERMINE
+=================================================================
