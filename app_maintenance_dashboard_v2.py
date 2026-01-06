@@ -385,18 +385,30 @@ def main():
     
     # Filtre Type de panne
     st.sidebar.subheader("⚠️ Type de Panne")
-    all_fault_types = ['Tous'] + sorted(df['Type_Panne'].dropna().unique().tolist())
-    selected_fault = st.sidebar.selectbox("Type de panne", all_fault_types)
+    all_fault_types = sorted(df['Type_Panne'].dropna().unique().tolist())
+    selected_faults = st.sidebar.multiselect(
+        "Type de panne (sélection multiple)",
+        all_fault_types,
+        default=all_fault_types
+    )
     
     # Filtre Technicien
     st.sidebar.subheader("👨‍🔧 Technicien")
-    all_technicians = ['Tous'] + sorted(df['Technicien'].unique().tolist())
-    selected_tech = st.sidebar.selectbox("Technicien", all_technicians)
+    all_technicians = sorted(df['Technicien'].unique().tolist())
+    selected_techs = st.sidebar.multiselect(
+        "Technicien (sélection multiple)",
+        all_technicians,
+        default=all_technicians
+    )
     
     # Filtre Machine
     st.sidebar.subheader("🏭 Machine")
-    all_machines = ['Toutes'] + sorted(df['ID_Machine'].unique().tolist())
-    selected_machine = st.sidebar.selectbox("Machine", all_machines)
+    all_machines = sorted(df['ID_Machine'].unique().tolist())
+    selected_machines = st.sidebar.multiselect(
+        "Machine (sélection multiple)",
+        all_machines,
+        default=all_machines
+    )
     
     # Application des filtres
     df_filtered = df.copy()
@@ -408,14 +420,14 @@ def main():
             (df_filtered['Date'].dt.date <= end_date)
         ]
     
-    if selected_fault != 'Tous':
-        df_filtered = df_filtered[df_filtered['Type_Panne'] == selected_fault]
+    if selected_faults:
+        df_filtered = df_filtered[df_filtered['Type_Panne'].isin(selected_faults)]
     
-    if selected_tech != 'Tous':
-        df_filtered = df_filtered[df_filtered['Technicien'] == selected_tech]
+    if selected_techs:
+        df_filtered = df_filtered[df_filtered['Technicien'].isin(selected_techs)]
     
-    if selected_machine != 'Toutes':
-        df_filtered = df_filtered[df_filtered['ID_Machine'] == selected_machine]
+    if selected_machines:
+        df_filtered = df_filtered[df_filtered['ID_Machine'].isin(selected_machines)]
     
     # Affichage du nombre de résultats
     st.sidebar.markdown("---")
