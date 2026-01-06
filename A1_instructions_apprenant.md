@@ -32,7 +32,6 @@ Le fichier `interventions_2024.csv` contient **5000 interventions** extraites de
 **Examiner les données** :
 
 * Ouvrez le fichier CSV [interventions_2024.csv](https://portail.cfai-centre.net/netypareo/index.php/document/telecharger/kQmMvU8XZ7xjpdfubM4OQa1MNize9I3gWScoCSGMmoTF5WBtu7-Apo9EKdiXDIZR0MCp_7eg/) dans Excel ou un éditeur de texte
-
 * Identifiez les problèmes de qualité des données
 
 ### Étape 2 : Nettoyage des Données avec l'IA (15 min)
